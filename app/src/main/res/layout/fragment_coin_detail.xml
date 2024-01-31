@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.CoinDetailActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/description_coin_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+    />
+
+    <TextView
+        android:id="@+id/textViewCurrencyDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="BTC / USD"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCurrencyDetail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/textViewLabelPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/price_label"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/underline"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelPrice" />
+
+
+            <TextView
+                android:id="@+id/textViewPriceDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/textViewLabelPrice"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="7352.5" />
+
+
+            <TextView
+                android:id="@+id/textViewLabelMaxDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/max_price_label"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelPrice" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/underline"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelMaxDay" />
+
+            <TextView
+                android:id="@+id/textViewMaxDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/textViewLabelMaxDay"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelPrice"
+                tools:text="7820.1" />
+
+            <TextView
+                android:id="@+id/textViewLabelMinDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/min_price_label"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelMaxDay" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/underline"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelMinDay" />
+
+            <TextView
+                android:id="@+id/textViewMinDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelMinDay"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMaxDay"
+                tools:text="7110.0" />
+
+            <TextView
+                android:id="@+id/textViewLabelLastMarket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/last_market_label"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelMinDay" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/underline"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelLastMarket" />
+
+            <TextView
+                android:id="@+id/textViewLastMarket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelLastMarket"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMinDay"
+                tools:text="Bitfinex" />
+
+            <TextView
+                android:id="@+id/textViewLabelLastUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/last_updated_label"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelLastMarket" />
+
+
+            <TextView
+                android:id="@+id/textViewLastUpdateDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                tools:text="21:05:16"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelLastUpdate"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLastMarket" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
