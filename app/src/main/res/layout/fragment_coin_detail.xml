@@ -11,24 +11,22 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="16dp"
-        android:contentDescription="@string/description_coin_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@mipmap/ic_launcher" />
-    />
 
     <TextView
         android:id="@+id/textViewCurrencyDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:text="BTC / USD"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="BTC / USD" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -195,9 +193,9 @@
                 android:layout_marginTop="16dp"
                 android:textColor="#000"
                 android:textSize="16sp"
-                tools:text="21:05:16"
                 app:layout_constraintStart_toEndOf="@+id/textViewLabelLastUpdate"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLastMarket" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewLastMarket"
+                tools:text="21:05:16" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
