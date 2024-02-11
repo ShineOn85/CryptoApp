@@ -38,6 +38,7 @@ class CoinPriceListActivity : AppCompatActivity() {
 
 
 
+
     private fun isOnePaneMode() = binding.fragmentContainer == null
 
     private fun launchDetailActivity(fromSymbol: String) {

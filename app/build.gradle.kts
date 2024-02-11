@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("kotlin-kapt")
 }
 val apiKey: String = ""
 android {
@@ -107,4 +108,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation ("com.google.dagger:dagger:2.50")
+    kapt ("com.google.dagger:dagger-compiler:2.50")
 }
