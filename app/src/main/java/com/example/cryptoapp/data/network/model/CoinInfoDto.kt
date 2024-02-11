@@ -137,6 +137,10 @@ data class CoinInfoDto(
 
     @SerializedName("IMAGEURL")
     @Expose
-    val imageUrl: String? = null
+    val imageUrl: String? = null,
+
+    @SerializedName("TOTALVOLUME24H")
+    @Expose
+    val totalVolume24h: Double? = null
 )
 

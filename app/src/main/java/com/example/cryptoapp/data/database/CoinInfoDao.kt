@@ -8,7 +8,7 @@ import androidx.room.Query
 
 @Dao
 interface CoinInfoDao {
-    @Query("SELECT * FROM full_price_list ORDER BY volumeDay ASC")
+    @Query("SELECT * FROM full_price_list")
     fun getPriceList(): LiveData<List<CoinInfoDbModel>>
 
     @Query("SELECT * FROM full_price_list WHERE fromSymbol == :fSym LIMIT 1")
@@ -16,4 +16,6 @@ interface CoinInfoDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPriceList(priceList: List<CoinInfoDbModel>)
+
+
 }

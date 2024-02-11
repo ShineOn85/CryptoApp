@@ -22,7 +22,6 @@ class CoinMapper @Inject constructor() {
         lowDay = dto.lowDay,
         lastMarket = dto.lastMarket,
         imageUrl = dto.imageUrl,
-        volumeDay = dto.volumeDay
     )
 
     fun mapJsonContainerToListCoinInfo(jsonContainer: CoinInfoJsonContainerDto): List<CoinInfoDto> {
