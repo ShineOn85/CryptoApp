@@ -29,6 +29,9 @@ class RefreshDataWorker(
                 val jsonContainer = apiService.getFullPriceList(fSym = fSyms)
                 val coinInfoDtoList = mapper.mapJsonContainerToListCoinInfo(jsonContainer)
                 val dbModelList = coinInfoDtoList.map { mapper.mapDtoToDbModel(it) }
+                if (coinInfoDao.countCoin() > dbModelList.size){
+                    coinInfoDao.deleteAllCoins()
+                }
                 coinInfoDao.insertPriceList(dbModelList)
             } catch (e: Exception) {
             }

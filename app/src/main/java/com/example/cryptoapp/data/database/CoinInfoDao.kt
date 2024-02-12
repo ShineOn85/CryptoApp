@@ -17,5 +17,11 @@ interface CoinInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPriceList(priceList: List<CoinInfoDbModel>)
 
+    @Query("SELECT COUNT(*) FROM full_price_list")
+    fun countCoin(): Int
+
+    @Query("DELETE FROM full_price_list")
+    suspend fun deleteAllCoins()
+
 
 }
