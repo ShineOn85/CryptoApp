@@ -16,7 +16,8 @@ import javax.inject.Inject
 class CoinRepositoryImpl @Inject constructor(
     private val application: Application,
     private val coinInfoDao: CoinInfoDao,
-    private val mapper: CoinMapper) : CoinRepository {
+    private val mapper: CoinMapper
+) : CoinRepository {
 
 
     override fun getCoinInfoList(): LiveData<List<CoinInfo>> {
