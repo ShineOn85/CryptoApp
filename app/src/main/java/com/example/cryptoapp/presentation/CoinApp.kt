@@ -2,10 +2,7 @@ package com.example.cryptoapp.presentation
 
 import android.app.Application
 import androidx.work.Configuration
-import com.example.cryptoapp.data.database.AppDatabase
-import com.example.cryptoapp.data.mapper.CoinMapper
-import com.example.cryptoapp.data.network.ApiFactory
-import com.example.cryptoapp.data.workers.RefreshDataWorkerFactory
+import com.example.cryptoapp.data.workers.CoinWorkerFactory
 import com.example.cryptoapp.di.DaggerApplicationComponent
 import javax.inject.Inject
 
@@ -14,7 +11,7 @@ class CoinApp : Application(), Configuration.Provider {
 
 
     @Inject
-    lateinit var refreshDataWorkerFactory: RefreshDataWorkerFactory
+    lateinit var coinWorkerFactory: CoinWorkerFactory
 
     val component by lazy {
         DaggerApplicationComponent.factory().create(this)
@@ -28,7 +25,7 @@ class CoinApp : Application(), Configuration.Provider {
     override val workManagerConfiguration: Configuration
         get() = Configuration
             .Builder()
-            .setWorkerFactory(refreshDataWorkerFactory)
+            .setWorkerFactory(coinWorkerFactory)
             .build()
 
 
